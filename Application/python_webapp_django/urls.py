@@ -9,6 +9,10 @@ import django.contrib.auth.views
 import app.forms
 import app.views
 
+from django.urls import path
+from . import views
+
+
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
@@ -38,9 +42,11 @@ urlpatterns = [
         },
         name='logout'),
 
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    path("register", views.register_request, name="register")
 ]
